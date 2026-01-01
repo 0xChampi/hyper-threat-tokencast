@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 class SegmentType(str, Enum):
     """Segment types in the 9-segment rotation"""
     TOKEN_LAUNCH_LIVE = "TOKEN_LAUNCH_LIVE"
+    GAMBA = "GAMBA"
     SWARM_ANALYSIS = "SWARM_ANALYSIS"
     R3LL_MUSIC = "R3LL_MUSIC"
     MEME_ECONOMY = "MEME_ECONOMY"
