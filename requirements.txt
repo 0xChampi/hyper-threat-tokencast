@@ -1,0 +1,25 @@
+# Minimal requirements for API server deployment
+# This gets the API running quickly, heavy ML dependencies can be added later
+
+# API Server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+httpx>=0.25.0
+
+# LangGraph / LangChain (for SWARM)
+langgraph>=0.0.20
+langchain>=0.1.0
+langchain-anthropic>=0.1.0
+langchain-core>=0.1.0
+
+# Core dependencies needed by SWARM
+python-dateutil>=2.8.0
+
+# Async
+aiohttp>=3.8.0
+
+# Database (for tokencast)
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+alembic>=1.12.0
