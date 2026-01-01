@@ -137,7 +137,9 @@ async def lifespan(app: FastAPI):
 
     # Create orchestrator
     logger.info("Initializing Tokencast Orchestrator...")
-    db = next(get_db())
+    # Create a database session for the orchestrator (stays open during app lifetime)
+    from tokencast.database.db import SessionLocal
+    db = SessionLocal()
     orchestrator = TokencastOrchestrator(
         db_session=db,
         swarm_client=swarm_client,
@@ -184,6 +186,10 @@ async def lifespan(app: FastAPI):
 
     if swarm_client:
         await swarm_client.close()
+
+    # Close database session
+    if orchestrator and orchestrator.db:
+        orchestrator.db.close()
 
     logger.info("Shutdown complete")
 
