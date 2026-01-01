@@ -27,7 +27,8 @@ from tokencast.segment_generators import (
     TokenLaunchGenerator,
     SwarmAnalysisGenerator,
     MemeEconomyGenerator,
-    CommunityInteractionGenerator
+    CommunityInteractionGenerator,
+    GambaSegmentGenerator
 )
 from tokencast.models import SegmentType
 from data.pump_fetcher import PumpFunFetcher
@@ -161,6 +162,10 @@ async def lifespan(app: FastAPI):
     orchestrator.register_segment_generator(
         SegmentType.COMMUNITY_INTERACTION,
         CommunityInteractionGenerator(swarm_client, None, pump_fun_client)
+    )
+    orchestrator.register_segment_generator(
+        SegmentType.GAMBA,
+        GambaSegmentGenerator(swarm_client, None, pump_fun_client)
     )
 
     # Set global orchestrator for routes

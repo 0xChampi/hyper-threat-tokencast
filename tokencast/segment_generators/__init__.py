@@ -9,11 +9,13 @@ from .token_launch import TokenLaunchGenerator
 from .swarm_analysis import SwarmAnalysisGenerator
 from .meme_economy import MemeEconomyGenerator
 from .community_interaction import CommunityInteractionGenerator
+from .gamba import GambaSegmentGenerator
 
 __all__ = [
     "SegmentGenerator",
     "TokenLaunchGenerator",
     "SwarmAnalysisGenerator",
     "MemeEconomyGenerator",
-    "CommunityInteractionGenerator"
+    "CommunityInteractionGenerator",
+    "GambaSegmentGenerator"
 ]
