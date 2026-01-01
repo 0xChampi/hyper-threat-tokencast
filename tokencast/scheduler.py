@@ -31,6 +31,7 @@ class SegmentScheduler:
     # Default segment durations (in seconds)
     DEFAULT_DURATIONS = {
         SegmentType.TOKEN_LAUNCH_LIVE: 420,      # 7 min
+        SegmentType.GAMBA: 360,                  # 6 min
         SegmentType.SWARM_ANALYSIS: 540,         # 9 min
         SegmentType.R3LL_MUSIC: 300,             # 5 min
         SegmentType.MEME_ECONOMY: 420,           # 7 min

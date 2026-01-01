@@ -60,6 +60,7 @@ class ShowConfig(BaseModel):
     segment_rotation: List[SegmentType] = Field(
         default_factory=lambda: [
             SegmentType.TOKEN_LAUNCH_LIVE,
+            SegmentType.GAMBA,
             SegmentType.SWARM_ANALYSIS,
             SegmentType.R3LL_MUSIC,
             SegmentType.MEME_ECONOMY,
