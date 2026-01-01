@@ -205,7 +205,11 @@ app = FastAPI(
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"] if ENVIRONMENT == "development" else ["https://hyper-threat.tv"],
+    allow_origins=["*"] if ENVIRONMENT == "development" else [
+        "https://hyper-threat.tv",
+        "http://localhost:3000",
+        "https://attn.money"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
