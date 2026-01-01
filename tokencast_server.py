@@ -45,7 +45,7 @@ ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
 SWARM_API_URL = os.getenv("SWARM_API_URL", "http://localhost:8001")
 SWARM_API_KEY = os.getenv("SWARM_API_KEY", "")
 PUMPFUN_API_BASE = os.getenv("PUMPFUN_API_BASE", "https://api.pump.fun")
-TOKENCAST_PORT = int(os.getenv("TOKENCAST_PORT", 8002))
+TOKENCAST_PORT = int(os.getenv("PORT", os.getenv("TOKENCAST_PORT", "8002")))
 
 # Global instances
 orchestrator = None
